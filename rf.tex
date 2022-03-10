@@ -1,0 +1,64 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{invisible}
+\useinnertheme{rounded}
+
+%Palatino + AMS Euler
+\usepackage[euler-digits,euler-hat-accent]{eulervm}
+\usefonttheme{serif}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+
+
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{shapes,arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{math}
+\usetikzlibrary{external}
+\tikzexternalize[optimize=false,prefix=tikz/]
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\sisetup{range-phrase=...}
+\usepackage{pgfgantt}
+\usepackage{soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{groupplots}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{subfig}
+
+\definecolor{juasblue}{rgb}{0,0.5411,0.7647}
+\definecolor{juasgrey}{rgb}{0.49,0.698,0.761}
+
+\title[Practical Days - RF]{CERN practical days - RF}
+\subtitle{09:00} 
+\author[Heine, Noll]{Ruben Heine \and Marvin Noll}
+\date[\today]{14.03.2022}
+
+\makeatletter
+\colorlet{beamer@blendedblue}{juasblue}
+\makeatother
+
+\begin{document}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{Arc Cell}
+\begin{frame}[t,fragile]{Stuff}
+\begin{itemize}
+\item Stuff
+\item More Stuff
+\end{itemize}
+\end{frame}
+
+\end{document}

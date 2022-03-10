@@ -1,0 +1,235 @@
+\begin{tikzpicture}
+\definecolor{betxcolor}{rgb}{0.05,0.05,0.05}
+\definecolor{betycolor}{rgb}{1,0.05,0.05}
+\definecolor{dxcolor}{rgb}{0.05,0.7,0.05}
+\def\gpwidth{9cm}
+\def\gpheight{4cm}
+
+% Cell properties
+\tikzmath{
+\Lcell=60;
+\Lq=1;
+\Lqh=0.5;
+\Ls=1;
+\Lb=12;
+}
+
+% Drawing properties
+\tikzmath{
+\maxW=11; %maximum width for beamer: ~12
+\eh=0.25; %element height in cm
+%
+%
+%scaled dimensions:
+\a=1; %conversion from real world [m] to drawing [cm]
+\lq=\Lq*\a;
+\lqh=\Lqh*\a;
+\ls=\Ls*\a;
+\lb=\Lb*\a;
+\qw=\Lq*\a; %q width in percent of total image width
+\qhw=\Lqh*\a; %q width in percent of total image width
+\sw=\Ls*\a; %q width in percent of total image width
+\bw=\Lb*\a; %q width in percent of total image width
+}
+
+%define elements
+\tikzset{mylabel/.style={label={[font=\tiny]above:$#1$}}}
+\tikzset{mylabelr/.style={label={[font=\tiny,align=center,rotate=-90,anchor=east]above:$#1$}}}
+\tikzset{QF/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qw }}
+\tikzset{QF2/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qhw }}
+\tikzset{QD/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qw }}
+\tikzset{SF/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=2*\sw }}
+\tikzset{SD/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=2*\sw }}
+\tikzset{B/.style={inner sep=0, rectangle, draw, fill=yellow!50,minimum height=\eh cm,minimum width=2*\bw }}
+
+
+\begin{groupplot}[
+group style={group size=1 by 2, x descriptions at=edge bottom,vertical sep=0.4cm},
+legend cell align={left},
+legend columns=1,
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black,font=\tiny},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xlabel={Path Length $s$ (\si{\meter})},
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ytick style={color=black},
+clip mode=individual,
+xmax=80
+]
+\nextgroupplot[xtick=\empty,ymin=0,ymax=120,ylabel={$\beta_x,\,\beta_y$ (\si{\m})},height=\gpheight,width=\gpwidth]
+\addplot [thick, betxcolor]
+table {%
+0.0 102.02327182182907
+0.25 101.72018814957572
+1.0 98.42356696160945
+2.0 93.7427483742616
+3.0 89.19678489446666
+9.5 62.93508484520764
+16.0 42.370972582692126
+22.5 27.504494966129702
+29.0 18.33567487062292
+30.0 17.641054666353163
+31.0 18.335674178229187
+32.0 19.37540684428652
+33.0 20.54999617472355
+39.5 31.471946104958185
+46.0 48.091546470352796
+52.5 70.40877177933206
+59.0 98.42357088820319
+59.75 101.72018915105451
+60.0 102.0232718218291
+};
+\addlegendentry{$\beta_x$}
+\begin{scope}[shift={(0,130)}]
+\draw (-2,0) -- (62,0);
+\node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF1) at (0.25*\lq+0*\ls+0*\lb+0*\a,0) {};
+\node[SF, mylabelr=SF] (MSF1) 
+at (0.5*\lq+0.5*\ls+0*\lb+1*\a,0) {};
+\node[B, mylabel=D\,\{\theta\},] (MB1) 
+at (0.5*\lq+1*\ls+0.5*\lb+2*\a,0) {};
+\node[B, mylabel=D\,\{\theta\}] (MB2) 
+at (0.5*\lq+1.0*\ls+1.5*\lb+3.0*\a,0) {};
+\node[QD, mylabelr=QD,] (MQD) 
+at (1.0*\lq+1.0*\ls+2.0*\lb+4.0*\a,0) {};
+\node[SD, mylabelr=SD] (MSD) 
+at (1.5*\lq+1.5*\ls+2.0*\lb+5*\a,0) {};
+\node[B, mylabel=D\,\{\theta\}] (MB3) 
+at (1.5*\lq+2.0*\ls+2.5*\lb+6.0*\a,0) {};
+\node[B, mylabel=D\,\{\theta\}] (MB4) 
+at (1.5*\lq+2.0*\ls+3.5*\lb+7.0*\a,0) {};
+\node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF2) 
+at (1.75*\lq+2.0*\ls+4.0*\lb+8.0*\a,0) {};
+\end{scope}
+
+
+
+\addplot [thick, betxcolor,dashed]
+table {%
+0.0 102.02327182182907
+0.25 101.72018814957572
+1.0 98.42356696160945
+2.0 93.7427483742616
+3.0 89.19678489446666
+9.5 62.93508484520764
+16.0 42.370972582692126
+22.5 27.504494966129702
+29.0 18.33567487062292
+30.0 17.641054666353163
+31.0 18.335674178229187
+32.0 19.37540684428652
+33.0 20.54999617472355
+39.5 31.471946104958185
+46.0 48.091546470352796
+52.5 70.40877177933206
+59.0 98.42357088820319
+59.75 101.72018915105451
+60.0 102.0232718218291
+};
+\addlegendentry{$\beta_{x_\text{dq}}$}
+
+\addplot [thick, betycolor]
+table {%
+0.0 17.641063014867772
+0.25 17.69722640687719
+1.0 18.335679917019604
+2.0 19.37540878245043
+3.0 20.549994074809423
+9.5 31.471923881516496
+16.0 48.091537725937876
+22.5 70.4088356080736
+29.0 98.4238175279236
+30.0 102.02354812212525
+31.0 98.42381752792363
+32.0 93.74296513543275
+33.0 89.19696916987003
+39.5 62.93512080008592
+46.0 42.37095646801615
+52.5 27.50447617366072
+59.0 18.3356799170196
+59.75 17.697226406877185
+60.0 17.64106301486777
+};
+\addlegendentry{$\beta_y$}
+\addplot [thick, betycolor,dashed]
+table {%
+0.0 17.641063014867772
+0.25 17.69722640687719
+1.0 18.335679917019604
+2.0 19.37540878245043
+3.0 20.549994074809423
+9.5 31.471923881516496
+16.0 48.091537725937876
+22.5 70.4088356080736
+29.0 98.4238175279236
+30.0 102.02354812212525
+31.0 98.42381752792363
+32.0 93.74296513543275
+33.0 89.19696916987003
+39.5 62.93512080008592
+46.0 42.37095646801615
+52.5 27.50447617366072
+59.0 18.3356799170196
+59.75 17.697226406877185
+60.0 17.64106301486777
+};
+\addlegendentry{$\beta_{y_\text{dq}}$}
+
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},17.64) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{min}=\SI{17.64}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},17.64);
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},102.024) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{max}=\SI{102.024}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},102.024);
+
+\nextgroupplot[ylabel=$D_x$ (\si{\m}),height=\gpheight,width=\gpwidth]
+\addplot [thick, dxcolor]
+table {%
+0.0 0.2146212819725416
+0.25 0.21432377499816074
+1.0 0.2108789632963894
+2.0 0.20586127045345595
+3.0 0.20084357761052252
+9.5 0.1702125668620797
+16.0 0.144210881690182
+22.5 0.12217720126280203
+29.0 0.10477287092311086
+30.0 0.10301608363697314
+31.0 0.1049488788059759
+32.0 0.10749759237431764
+33.0 0.11004630594265936
+39.5 0.12859695258709986
+46.0 0.15177694604340425
+52.5 0.17892494093500577
+59.0 0.2107022569574644
+59.75 0.21427944438468452
+60.0 0.2146212819725416
+};
+\addlegendentry{$D_x$}
+
+\addplot [thick, dxcolor,dashed]
+table {%
+0.0 0.2146212819725416
+0.25 0.21432377499816074
+1.0 0.2108789632963894
+2.0 0.20586127045345595
+3.0 0.20084357761052252
+9.5 0.1702125668620797
+16.0 0.144210881690182
+22.5 0.12217720126280203
+29.0 0.10477287092311086
+30.0 0.10301608363697314
+31.0 0.1049488788059759
+32.0 0.10749759237431764
+33.0 0.11004630594265936
+39.5 0.12859695258709986
+46.0 0.15177694604340425
+52.5 0.17892494093500577
+59.0 0.2107022569574644
+59.75 0.21427944438468452
+60.0 0.2146212819725416
+};
+\addlegendentry{$D_{x_\text{dq}}$}
+
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0.103) -- node[pos=1,anchor=west] {$D_{x_\text{min}=\SI{0.103}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0.103);
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0.215) -- node[pos=1,anchor=west] {$D_{x_\text{max}=\SI{0.215}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0.215);
+
+\end{groupplot}
+\end{tikzpicture}
