@@ -107,12 +107,12 @@ t_g = - \frac{\text{d}}{\text{d}\omega} \angle S_{12} \approx -\frac{\Delta \ang
 \subsection{Strip-Line BPM}
 \begin{frame}[t,fragile]{Strip-Line BPM (1) - Intro}
 
-Reflectometry for 500 MHz and 50 Ohm
+Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \begin{itemize}
 \item[a] Connector
 \item[b] Strip line
 \begin{itemize}
-\item Four 14cm strips
+\item Four \SI{14}{\cm} strips
 \item Short-circuit termination
 \end{itemize}
 \end{itemize}
@@ -129,12 +129,12 @@ Reflectometry for 500 MHz and 50 Ohm
 
 \begin{frame}[t,fragile]{Strip-Line BPM (2) - Time Domain Reflectometry}
 \begin{itemize}
-\item Measuring S11 in time domain to check acceptance criteria
+\item Measuring $S_{11}$ in time domain to check acceptance criteria
 \begin{itemize}
-\item[a] Connector: $+ 50 mU$ 
-\item[b] Strip line: $-/+ 20mU$
+\item[a] Connector: $+\SI{50}{mU}$ 
+\item[b] Strip line: $\pm\SI{20}{mU}$
 \end{itemize}
-\item Strip line \textit{blue} in specs, \textit{gold} not
+\item Strip line \textit{blue} in specs, \textit{gold} not in specs
 \end{itemize}
 
 \begin{figure}
@@ -149,23 +149,22 @@ Reflectometry for 500 MHz and 50 Ohm
 
 \begin{frame}[t,fragile]{Strip-Line BPM (3) - Frequency Domain Characterization}
 \begin{itemize}
-\item Strip-line length from S11
+\item Strip-line length from $S_{11}$
 \begin{itemize}
-\item from S11: $1.086 ns$, $162.77 mm$
-
-\item from phase: $1.218 ns$, $182.58 mm$
-\item from group delay: $1.32  ns$, $197.87 mm$
+\item from $S_{11}$: \SI{1.086}{\nano\second}, \SI{162.77}{\mm}
+\item from phase: \SI{1.218}{\nano\second}, \SI{182.58}{\mm}
+\item from group delay: \SI{1.32}{\nano\second}, \SI{197.87}{\mm}
 \end{itemize}
-\item Cross-talk from S21
+\item Cross-talk from $S_{21}$
 \begin{itemize}
-\item Maximum reflection of $ -25.25 dB$ at $797.68 MHz$ 
-\item Reflection of $ -53.06 dB$ at operation frequency $ 500.00 MHz$
+\item Maximum reflection of \SI{-25.25}{\dB} at \SI{797.68}{\MHz}
+\item Reflection of \SI{-53.06}{\dB} at operation frequency \SI{500}{\MHz}
 \end{itemize}
 \end{itemize}
 
 \begin{figure}
   \centering
-  \subfloat[Calculation from S11]{\includegraphics[width=0.48\textwidth]{2_length}}\quad
+  \subfloat[Calculation from $S_{11}$]{\includegraphics[width=0.48\textwidth]{2_length}}\quad
   \subfloat[Calculation from phase]{\includegraphics[width=0.48\textwidth]{2_phase}}\\
 \end{figure}
 
@@ -197,7 +196,7 @@ Reflectometry for 500 MHz and 50 Ohm
 \begin{frame}[t,fragile]{RF - cavaties (1) - Intro}
 \begin{itemize}
 \item Multi cell cavity in X-band
-\item Operating mode at 11.424 GHz
+\item Operating mode at \SI{11.424}{\GHz}
 \item Under coupled antenna
 \end{itemize}
 
@@ -212,11 +211,11 @@ Reflectometry for 500 MHz and 50 Ohm
 \begin{frame}[t,fragile]{RF - cavaties (2) - Transmission measurement}
 \begin{itemize}
 \item Identify different modes 
-\item Calculated Q from the $3 dB$ bandwidth: $3093$
+\item Calculated $Q$ from the \SI{3}{\dB} bandwidth: \num{3093}
 \begin{figure}
   \centering
-  \subfloat[All modes (S21)]{\includegraphics[width=0.45\textwidth]{3_S11_all_modes}}\quad
-  \subfloat[Q for a certain mode]{\includegraphics[width=0.45\textwidth]{3_S11_mode}}\\
+  \subfloat[All modes ($S_{21}$)]{\includegraphics[width=0.45\textwidth]{3_S11_all_modes}}\quad
+  \subfloat[$Q$ for a certain mode]{\includegraphics[width=0.45\textwidth]{3_S11_mode}}\\
 \end{figure}
 \end{itemize}
 \end{frame}
@@ -224,7 +223,7 @@ Reflectometry for 500 MHz and 50 Ohm
 \begin{frame}[t,fragile]{RF - cavaties (3) - Transmission measurement}
 \begin{itemize}
 \item Identify SWR
-\item Under coupling (S11 in Smith Chart)
+\item Under coupling ($S_{11}$ in Smith Chart)
 \begin{figure}
   \centering
   \subfloat[Caption a]{\includegraphics[width=0.45\textwidth]{3_comby_plot}}\quad
