@@ -208,6 +208,10 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \begin{itemize}
 \item Identify different modes 
 \item Calculated $Q$ from the \SI{3}{\dB} bandwidth: \num{3093}
+\begin{itemize}
+\item Center frequency: \SI{11.423}{\GHz}
+\item Bandwidth: \SI{3.693}{\MHz}
+\end{itemize}
 \begin{figure}
   \centering\setcounter{subfigure}{0}
   \subfloat[All modes ($S_{21}$)]{\includegraphics[width=0.45\textwidth]{3_S11_all_modes}}\quad
@@ -219,13 +223,22 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \begin{frame}[t,fragile]{RF - Cavities (3) - Transmission Measurement}
 \begin{itemize}
 \item Identify SWR
-\item Under coupling ($S_{11}$ in Smith Chart)
+\begin{itemize}
+\item High SWR for high reflection
+\item Low SWR for high transmission
+\end{itemize}
+
+\item Coupling ($S_{11}$ in Smith Chart)
+\begin{itemize}
+\item Under coupled
+\end{itemize}
+\end{itemize}
 \begin{figure}
   \centering\setcounter{subfigure}{0}
-  \subfloat[Caption a]{\includegraphics[width=0.45\textwidth]{3_comby_plot}}\quad
-  \subfloat[Caption b]{\includegraphics[width=0.45\textwidth]{3_comby_plot_all}}\\
+  \subfloat[Under coupled: S21, S11, SWR]{\includegraphics[width=0.48\textwidth]{3_comby_plot}}\quad
+  \subfloat[Complete: S21, S11]{\includegraphics[width=0.48\textwidth]{3_comby_plot_all}}\\
 \end{figure}
-\end{itemize}
+
 \end{frame}
 
 \section{Afternoon Session}
@@ -275,26 +288,33 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \end{itemize}
 \item Spectrum Analyser (Modulation)
 
+\item Strip-line
 \item Cavities
-\item Coupling
 \begin{itemize}
-\item Under, over and critical coupling  
-\item Smith chart
+\item Coupling
 \end{itemize}
 \end{itemize}
 \begin{figure}
   \centering
-  \includegraphics[width=0.28\textwidth]{4_resume}
+  \includegraphics[width=0.32\textwidth]{4_resume}
   \caption{Cavity Setup}
 \end{figure}
 \end{frame}
 
 \section{Appendix}
-\begin{frame}[t,fragile]{Appendix (1) - Multi mode cavity}
+\begin{frame}[t,fragile]{Appendix (1) - Strip-line BPM}
 \begin{figure}
   \centering\setcounter{subfigure}{0}
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3}}\quad
-  \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3_2}}\\
+  \subfloat[S21: crosstalk]{\includegraphics[width=0.45\textwidth]{2_crosstalk}}\quad
+  \subfloat[Group delay]{\includegraphics[width=0.45\textwidth]{2_group_delay}}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}[t,fragile]{Appendix (2) - Multi mode cavity}
+\begin{figure}
+  \centering\setcounter{subfigure}{0}
+  \subfloat[S11, S21: for all modes]{\includegraphics[width=0.45\textwidth]{5_3}}\quad
+  \subfloat[S11, S21, S22]{\includegraphics[width=0.45\textwidth]{5_3_2}}\\
 \end{figure}
 \end{frame}
 
