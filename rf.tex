@@ -168,7 +168,7 @@ Reflectometry for 500 MHz and 50 Ohm
 \item More Stuff
 \end{itemize}
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[Caption a]{\includegraphics[width=0.28\textwidth]{example-image-a}}\quad
   \subfloat[Caption b]{\includegraphics[width=0.28\textwidth]{example-image-b}}\\
   \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{example-image-c}}\quad
@@ -186,6 +186,12 @@ Reflectometry for 500 MHz and 50 Ohm
 \end{itemize}
 \item Under-, over- and critical coupling
 \end{itemize}
+\begin{figure}
+  \centering\setcounter{subfigure}{0}
+  \subfloat[Under Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_under.png}}\;
+  \subfloat[Critically Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_crit.png}}\;
+  \subfloat[Over Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_over.png}}
+\end{figure}
 \end{frame}
 
 \section{Resume}
