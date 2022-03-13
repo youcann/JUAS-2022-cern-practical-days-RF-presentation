@@ -119,10 +119,8 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 
 \begin{figure}
   \centering
-  \subfloat[Strip line: image and circuit]{\includegraphics[width=0.9\textwidth]{2_1}}\quad
-%  \subfloat[b]{\includegraphics[width=0.45\textwidth]{2_S11_TD}}\\
-%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
-%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
+  \includegraphics[width=0.9\textwidth]{2_1}
+  \caption{Strip line: Photo and Circuit}
 \end{figure}
 
 \end{frame}
@@ -138,11 +136,9 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \end{itemize}
 
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[TDR Aim]{\includegraphics[width=0.4\textwidth]{2_2}}\quad
   \subfloat[TDR Reproduced]{\includegraphics[width=0.55\textwidth]{2_S11_TD}}\\
-%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
-%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
 \end{figure}
 
 \end{frame}
@@ -163,7 +159,7 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \end{itemize}
 
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[Calculation from $S_{11}$]{\includegraphics[width=0.48\textwidth]{2_length}}\quad
   \subfloat[Calculation from phase]{\includegraphics[width=0.48\textwidth]{2_phase}}\\
 \end{figure}
@@ -192,8 +188,8 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 %
 %\end{frame}
 
-\subsection{RF - Cavaties}
-\begin{frame}[t,fragile]{RF - cavaties (1) - Intro}
+\subsection{RF - Cavities}
+\begin{frame}[t,fragile]{RF - Cavities (1) - Intro}
 \begin{itemize}
 \item Multi cell cavity in X-band
 \item Operating mode at \SI{11.424}{\GHz}
@@ -201,31 +197,31 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \end{itemize}
 
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[Multi cell cavity]{\includegraphics[width=0.48\textwidth]{3_1}}\quad
   \subfloat[Setup]{\includegraphics[width=0.48\textwidth]{3_1_2}}\\
 \end{figure}
 
 \end{frame}
 
-\begin{frame}[t,fragile]{RF - cavaties (2) - Transmission measurement}
+\begin{frame}[t,fragile]{RF - Cavities (2) - Transmission Measurement}
 \begin{itemize}
 \item Identify different modes 
 \item Calculated $Q$ from the \SI{3}{\dB} bandwidth: \num{3093}
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[All modes ($S_{21}$)]{\includegraphics[width=0.45\textwidth]{3_S11_all_modes}}\quad
   \subfloat[$Q$ for a certain mode]{\includegraphics[width=0.45\textwidth]{3_S11_mode}}\\
 \end{figure}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t,fragile]{RF - cavaties (3) - Transmission measurement}
+\begin{frame}[t,fragile]{RF - Cavities (3) - Transmission Measurement}
 \begin{itemize}
 \item Identify SWR
 \item Under coupling ($S_{11}$ in Smith Chart)
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[Caption a]{\includegraphics[width=0.45\textwidth]{3_comby_plot}}\quad
   \subfloat[Caption b]{\includegraphics[width=0.45\textwidth]{3_comby_plot_all}}\\
 \end{figure}
@@ -252,7 +248,7 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \item Under-, over- and critical coupling
 \end{itemize}
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[Under Coupled]{\includegraphics[height=0.16\textwidth]{img/cav_under.png}}\;
   \subfloat[Critically Coupled]{\includegraphics[height=0.16\textwidth]{img/cav_crit.png}}\;
   \subfloat[Over Coupled]{\includegraphics[height=0.16\textwidth]{img/cav_over.png}}
@@ -279,21 +275,17 @@ Reflectometry for \SI{500}{\MHz} and \SI{50}{\ohm}
 \end{itemize}
 \begin{figure}
   \centering
-  \subfloat[Cavity setup]{\includegraphics[width=0.28\textwidth]{4_resume}}\quad
-%  \subfloat[Caption b]{\includegraphics[width=0.28\textwidth]{3_1}}\\
-%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
-%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
+  \includegraphics[width=0.28\textwidth]{4_resume}
+  \caption{Cavity Setup}
 \end{figure}
 \end{frame}
 
 \section{Appendix}
 \begin{frame}[t,fragile]{Appendix (1) - Multi mode cavity}
 \begin{figure}
-  \centering
+  \centering\setcounter{subfigure}{0}
   \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3}}\quad
   \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3_2}}\\
-%  \subfloat[]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
-%  \subfloat[]{\includegraphics[width=0.28\textwidth]{3_1}}
 \end{figure}
 \end{frame}
 
