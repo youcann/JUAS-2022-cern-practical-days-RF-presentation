@@ -25,7 +25,7 @@
 \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\sisetup{range-phrase=~...~}
+\sisetup{range-phrase=...}
 \usepackage{pgfgantt}
 \usepackage{soul}
 \usepackage{pgfplots}
@@ -93,7 +93,7 @@ t_g = - \frac{\text{d}}{\text{d}\omega} \angle S_{12} \approx -\frac{\Delta \ang
 \end{equation*}
 \end{frame}
 
-\begin{frame}[t,fragile]{Band Pass Filter (3) - Group Delay $t_g$}
+\begin{frame}[t,fragile]{Band Pass Filter (4) - Group Delay $t_g$}
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{img/bandpass_groupdelay.png}
@@ -102,6 +102,7 @@ t_g = - \frac{\text{d}}{\text{d}\omega} \angle S_{12} \approx -\frac{\Delta \ang
 \text{From group delay plot: }t_g = \SI{608.87}{\pico\second}
 \end{equation*}
 \end{frame}
+
 
 \subsection{Strip-Line BPM}
 \begin{frame}[t,fragile]{Strip-Line BPM (1) - Intro}
@@ -115,30 +116,82 @@ Reflectometry for 500 MHz and 50 Ohm
 \item Short-circuit termination
 \end{itemize}
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \subfloat[Strip line: image and circuit]{\includegraphics[width=0.9\textwidth]{2_1}}\quad
+%  \subfloat[b]{\includegraphics[width=0.45\textwidth]{2_S11_TD}}\\
+%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
+%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}[t,fragile]{Strip-Line BPM (2) - Time Domain Reflectometry}
 \begin{itemize}
 \item Measuring S11 in time domain to check acceptance criteria
 \begin{itemize}
-\item[a] Connector: + 0.5
-\item[b] Strip line: -/+ 0.2
+\item[a] Connector: $+ 50 mU$ 
+\item[b] Strip line: $-/+ 20mU$
 \end{itemize}
-\item Repeat for all strip lines
+\item Strip line \textit{blue} in specs, \textit{gold} not
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \subfloat[TDR Aim]{\includegraphics[width=0.4\textwidth]{2_2}}\quad
+  \subfloat[TDR Reproduced]{\includegraphics[width=0.55\textwidth]{2_S11_TD}}\\
+%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
+%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}[t,fragile]{Strip-Line BPM (3) - Frequency Domain Characterization}
 \begin{itemize}
 \item Strip-line length from S11
-\item Comparision with group delay
+\begin{itemize}
+\item from S11: $1.086 ns$, $162.77 mm$
+
+\item from phase: $1.218 ns$, $182.58 mm$
+\item from group delay: $1.32  ns$, $197.87 mm$
+\end{itemize}
 \item Cross-talk from S21
 \begin{itemize}
-\item Minimum at Hz
+\item Maximum reflection of $ -25.25 dB$ at $797.68 MHz$ 
+\item Reflection of $ -53.06 dB$ at operation frequency $ 500.00 MHz$
 \end{itemize}
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \subfloat[Calculation from S11]{\includegraphics[width=0.48\textwidth]{2_length}}\quad
+  \subfloat[Calculation from phase]{\includegraphics[width=0.48\textwidth]{2_phase}}\\
+\end{figure}
+
 \end{frame}
+
+%\begin{frame}[t,fragile]{Strip-Line BPM (4) - Strip Line Length}
+%\begin{itemize}
+%\item Strip-line length from S11
+%\begin{itemize}
+%\item $1.086 ns$ translates to $162.77 mm$
+%\end{itemize}
+%\item Comparision with group delay: $1.218 ns$, $182.58 mm$
+%\item Cross-talk from S21
+%\begin{itemize}
+%\item Maximum reflection of $ -25.25 dB$ at $797.68 MHz$ 
+%\item Reflection of $ -53.06 dB$ at operation frequency $ 500.00 MHz$
+%\end{itemize}
+%\end{itemize}
+%
+%\begin{figure}
+%  \centering
+%  \subfloat[TDR Aim]{\includegraphics[width=0.4\textwidth]{2_2}}\quad
+%  \subfloat[TDR Reproduced]{\includegraphics[width=0.55\textwidth]{2_S11_TD}}\\
+%\end{figure}
+%
+%\end{frame}
 
 \subsection{RF - Cavaties}
 \begin{frame}[t,fragile]{RF - cavaties (1) - Intro}
@@ -147,16 +200,36 @@ Reflectometry for 500 MHz and 50 Ohm
 \item Operating mode at 11.424 GHz
 \item Under coupled antenna
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \subfloat[Multi cell cavity]{\includegraphics[width=0.48\textwidth]{3_1}}\quad
+  \subfloat[Setup]{\includegraphics[width=0.48\textwidth]{3_1_2}}\\
+\end{figure}
+
 \end{frame}
 
 \begin{frame}[t,fragile]{RF - cavaties (2) - Transmission measurement}
 \begin{itemize}
 \item Identify different modes 
-\item Calculated Q from the $3 dB$ bandwidth
-\item Cross-talk from S21
-\begin{itemize}
-\item Minimum at Hz
+\item Calculated Q from the $3 dB$ bandwidth: $3093$
+\begin{figure}
+  \centering
+  \subfloat[All modes (S21)]{\includegraphics[width=0.45\textwidth]{3_S11_all_modes}}\quad
+  \subfloat[Q for a certain mode]{\includegraphics[width=0.45\textwidth]{3_S11_mode}}\\
+\end{figure}
 \end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{RF - cavaties (3) - Transmission measurement}
+\begin{itemize}
+\item Identify SWR
+\item Under coupling (S11 in Smith Chart)
+\begin{figure}
+  \centering
+  \subfloat[Caption a]{\includegraphics[width=0.45\textwidth]{3_comby_plot}}\quad
+  \subfloat[Caption b]{\includegraphics[width=0.45\textwidth]{3_comby_plot_all}}\\
+\end{figure}
 \end{itemize}
 \end{frame}
 
@@ -167,13 +240,6 @@ Reflectometry for 500 MHz and 50 Ohm
 \item Stuff
 \item More Stuff
 \end{itemize}
-\begin{figure}
-  \centering\setcounter{subfigure}{0}
-  \subfloat[Caption a]{\includegraphics[width=0.28\textwidth]{example-image-a}}\quad
-  \subfloat[Caption b]{\includegraphics[width=0.28\textwidth]{example-image-b}}\\
-  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{example-image-c}}\quad
-  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{example-image-a}}
-\end{figure}
 \end{frame}
 
 \subsection{Coupling of an RF Cavity}
@@ -186,21 +252,44 @@ Reflectometry for 500 MHz and 50 Ohm
 \end{itemize}
 \item Under-, over- and critical coupling
 \end{itemize}
-\begin{figure}
-  \centering\setcounter{subfigure}{0}
-  \subfloat[Under Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_under.png}}\;
-  \subfloat[Critically Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_crit.png}}\;
-  \subfloat[Over Coupled]{\includegraphics[height=0.15\textwidth]{img/cav_over.png}}
-\end{figure}
 \end{frame}
 
 \section{Resume}
 \begin{frame}[t,fragile]{Resume}
 \begin{itemize}
-\item Last session with Michele
-\item We learned, that...
-\item Whatever ...
+\item Network Analyser
+\begin{itemize}
+\item Time and Frequency Domain
+\item Scattering parameter, Impedance, SWR, phase
+\item Calculation of Q, reflexion coefficient
 \end{itemize}
+\item Spectrum Analyser (Modulation)
+
+\item Cavities
+\item Coupling
+\begin{itemize}
+\item Under, over and critical coupling  
+\item Smith chart
+\end{itemize}
+\end{itemize}
+\begin{figure}
+  \centering
+  \subfloat[Cavity setup]{\includegraphics[width=0.28\textwidth]{4_resume}}\quad
+%  \subfloat[Caption b]{\includegraphics[width=0.28\textwidth]{3_1}}\\
+%  \subfloat[Caption c]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
+%  \subfloat[Caption d]{\includegraphics[width=0.28\textwidth]{3_1}}
+\end{figure}
+\end{frame}
+
+\section{Appendix}
+\begin{frame}[t,fragile]{Appendix (1) - Multi mode cavaty}
+\begin{figure}
+  \centering
+  \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3}}\quad
+  \subfloat[]{\includegraphics[width=0.45\textwidth]{5_3_2}}\\
+%  \subfloat[]{\includegraphics[width=0.28\textwidth]{3_1}}\quad
+%  \subfloat[]{\includegraphics[width=0.28\textwidth]{3_1}}
+\end{figure}
 \end{frame}
 
 \end{document}
