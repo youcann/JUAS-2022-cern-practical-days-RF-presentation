@@ -25,7 +25,7 @@
 \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\sisetup{range-phrase=...}
+\sisetup{range-phrase=~...~}
 \usepackage{pgfgantt}
 \usepackage{soul}
 \usepackage{pgfplots}
@@ -60,11 +60,47 @@
 
 \section{Forenoon Session}
 \subsection{Band Pass Filter}
-\begin{frame}[t,fragile]{Band Pass Filter (1) - Intro}
-\begin{itemize}
-\item Stuff
-\item More Stuff
-\end{itemize}
+\begin{frame}[t,fragile]{Band Pass Filter (1) - Transmission $S_{12}$, $S_{21}$}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/bandpass_S12.png}
+\end{figure}
+\begin{equation*}
+BW=\SI{2.015}{\GHz},\quad f=\SIrange{2.66}{4.67}{\GHz}
+\end{equation*}
+\begin{center}
+$S_{21} \approx S_{12} \Rightarrow$ Reciprocal
+\end{center}
+\end{frame}
+
+\begin{frame}[t,fragile]{Band Pass Filter (2) - Input/Output Reflection $S_{11}$, $S_{22}$}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/bandpass_S11S22.png}
+\end{figure}
+\begin{center}
+$S_{11} \neq S_{22} \Rightarrow$ Non symmetric
+\end{center}
+\end{frame}
+
+\begin{frame}[t,fragile]{Band Pass Filter (3) - Phase $\angle S_{12}$}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/bandpass_phase.png}
+\end{figure}
+\begin{equation*}
+t_g = - \frac{\text{d}}{\text{d}\omega} \angle S_{12} \approx -\frac{\Delta \angle S_{12} \;[\si{\radian}]}{\Delta \omega} = \frac{\SI{2.297}{\radian}}{\SI{1.002}{\GHz}} = zu wenig
+\end{equation*}
+\end{frame}
+
+\begin{frame}[t,fragile]{Band Pass Filter (3) - Group Delay $t_g$}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/bandpass_groupdelay.png}
+\end{figure}
+\begin{equation*}
+\text{From group delay plot: }t_g = \SI{608.87}{\pico\second}
+\end{equation*}
 \end{frame}
 
 \subsection{Strip-Line BPM}
